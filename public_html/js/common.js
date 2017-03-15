@@ -7,8 +7,26 @@
  * @bareme : 1 point si tableaux utilisés à bon escient
  * @bareme : 1 point si objet est correct en général
  */
-var data = {};
+var data = { product: {
+        name: 'Lemaire',
+        surname: 'Sophie',
+        img: [
+            'img/plugin/sophie.jpg',
+        ],
+        adress: '12 rue Claude Bernard 36200 Argenton sur Creuse',
+        mail: 'sophielemaire361@gmail.com',
+        phone: '0626096103',
+        car: 'Yes',
+        
+    },
+    };
 
+var data = { production: {
+        competence: 'HTML',
+        competence1: 'CSS',
+        competence2: 'GITHUB',
+    },
+    };
 
 /*
  * Fabrication de la partie description
@@ -25,7 +43,12 @@ var data = {};
  * @bareme : 1 point si description aérée
  */
 function create_description(data, idDiv){
-  
+  var newUl = $('<ul/>').appendTo($('#description'));
+   $('<li/>',{html : "<img src="+data.product.img[0] + "/>"}).appendTo(newUl);
+   $('<li/>',{html : " Name : "+data.product.name + ""}).appendTo(newUl);
+   $('<li/>',{html : " Surname : "+data.product.surname + ""}).appendTo(newUl);
+   $('<li/>',{html : " adress : "+data.product.adress + ""}).appendTo(newUl);
+   return newUl;
 }
 
 /*
@@ -38,9 +61,13 @@ function create_description(data, idDiv){
  * @bareme : 1 point pour l'affichage des compétences
  * @bareme : 3 points pour l'utilisation correcte de la progressBar
  */
-function create_technicalSkills(data, idDiv){
-
-}
+/*function create_technicalSkills(data, idDiv){
+   var newUl = $('<ul/>').appendTo($('#technicalSkills'));
+   $('<li/>',{html : " competence : "+data.production.competence + ""}).appendTo(newUl);
+   $('<li/>',{html : " competence1 : "+data.production.competence1 + ""}).appendTo(newUl);
+   $('<li/>',{html : " competence2 : "+data.production.competence2 + ""}).appendTo(newUl);
+   return newUl;
+}*/
 
 /**
  * Fabrication de la partie exp, form, hobbies
