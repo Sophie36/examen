@@ -1,0 +1,10 @@
+body {
+  color : white !important;
+  width: 720px;
+  overflow: hidden;
+}
+
+#exp_form_hobbies{   
+  overflow : auto;
+  overflow-y: visible;
+}
